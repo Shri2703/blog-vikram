@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://indometalgoth.com/uploads/2023/07/when-is-the-best-time-to-start-a-blog.webp'); /* Replace 'background.jpg' with your image path */
+    background-size: cover;
+    background-attachment: fixed; /* Fixed background image */
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto; /* Center the container */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Glass morphism effect */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.posts {
+    margin-top: 20px;
+    width: 39rem;
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+.post {
+    background-color: rgba(255, 255, 255, 0.8); /* Glass morphism effect */
+    border-radius: 5px;
+    width: 450px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.post:hover {
+    transform: translateY(-5px); /* Hover effect */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Blog</h1>
+        <form action="/post" method="POST">
+            <input type="text" name="title" placeholder="Title" required>
+            <textarea name="content" placeholder="Write your post here" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <div class="posts">
+        <% posts.forEach(post => { %>
+            <div class="post">
+                <h2><a href="/post/<%= post._id %>"><%= post.title %></a></h2>
+                <p><%= post.content %></p>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
