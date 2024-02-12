@@ -69,9 +69,7 @@ npm start
 
 7. Open your web browser and navigate to `http://localhost:3000` to access the blog website.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
